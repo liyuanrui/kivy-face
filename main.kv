@@ -1,0 +1,41 @@
+<Label>:
+    font_name:'droid.ttf'
+<TextInput>:
+    font_name:'droid.ttf'
+<Dutton@Button>:
+    font_name:'droid.ttf'
+
+<MyLayout>:
+    orientation:'vertical'
+    padding:(21,21)
+    canvas.before:
+        Rectangle:
+            pos:self.pos
+            size:self.size
+            source:'44.jpeg'
+
+    Camera:
+        index:0
+        id:camera
+        play: True
+        resolution: (640,480)
+    
+    BoxLayout:
+        orientation:'horizontal'
+        size_hint_y:None
+        height:'81dp'
+
+        Dutton:
+            text:'前置'
+            on_release:camera.index=1
+            background_normal:'3.png'
+            background_down:'2.png'
+        Dutton:
+            text:'后置'
+            on_release:camera.index=0
+            background_normal:'3.png'
+            background_down:'2.png'
+        
+    Label:
+        
+
